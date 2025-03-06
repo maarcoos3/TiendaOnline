@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Importamos Link
 import "./Products.css";
 
 const Products = () => {
@@ -40,18 +41,24 @@ const Products = () => {
         <div className="products-container">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
-                {product.image && (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="product-image"
-                  />
-                )}
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <p className="price">${product.price}</p>
-              </div>
+              <Link 
+                key={product.id} 
+                to={`/productos/${product.id}`} 
+                className="product-card-link"
+              >
+                <div className="product-card">
+                  {product.image && (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="product-image"
+                    />
+                  )}
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <p className="price">${product.price}</p>
+                </div>
+              </Link>
             ))
           ) : (
             <p>No se encontraron productos.</p>
