@@ -1,4 +1,4 @@
-/* src/pages/profile/Profile.css */
+/* Profile.css */
 .profile {
     max-width: 600px;
     margin: 40px auto;
@@ -15,24 +15,75 @@
     margin-bottom: 20px;
   }
   
-  .profile-info {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
+  /* Visualización de datos */
   .profile-info p {
     font-size: 1em;
     margin-bottom: 10px;
+    text-align: left;
   }
   
+  .profile-info strong {
+    display: inline-block;
+    width: 120px;
+  }
+  
+  /* Botón para modificar datos */
+  .profile-info button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .profile-info button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Formulario de edición */
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+  }
+  
+  .profile-form label {
+    font-weight: bold;
+  }
+  
+  .profile-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .profile-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .profile-form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Botón de logout */
   .logout-button {
+    margin-top: 20px;
     padding: 10px 20px;
     background-color: #ff4d4d;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
   .logout-button:hover {

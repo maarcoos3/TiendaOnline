@@ -61,4 +61,37 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+// En back/routes/auth.js
+router.put("/update", async (req, res) => {
+  const { id, name, username, email, password } = req.body;
+  if (!id || !name || !username || !email) {
+    return res.status(400).json({ error: "Faltan datos requeridos" });
+  }
+  try {
+    let sql, params;
+    // Si el usuario ha ingresado una nueva contraseña, la hasheamos
+    if (password && password.trim() !== "") {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      sql = "UPDATE users SET name = ?, username = ?, email = ?, password = ? WHERE id = ?";
+      params = [name, username, email, hashedPassword, id];
+    } else {
+      // No se actualiza la contraseña
+      sql = "UPDATE users SET name = ?, username = ?, email = ? WHERE id = ?";
+      params = [name, username, email, id];
+    }
+    await db.query(sql, params);
+    // Recuperamos los nuevos datos del usuario
+    const [rows] = await db.query("SELECT id, name, username, email FROM users WHERE id = ?", [id]);
+    if (rows.length === 0) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+    res.json({ message: "Datos actualizados correctamente", user: rows[0] });
+  } catch (error) {
+    console.error("Error al actualizar usuario:", error);
+    res.status(500).json({ error: "Error al actualizar usuario" });
+  }
+});
+
+
 module.exports = router;

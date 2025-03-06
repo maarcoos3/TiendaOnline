@@ -1,68 +1,37 @@
 .header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+  padding: 10px 20px;
+  background-color: #000000;
+  border-bottom: 1px solid #ffffff;
+  height: 100%;
+  width: 100%;
 }
 
-.header h1 {
-  margin-bottom: 10px;
-  font-size: 2em;
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top h1 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 500;
 }
 
-.header nav {
+.user-cart {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-nav {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.header nav a {
-  color: #fff;
+.main-nav a {
   text-decoration: none;
-  font-size: 1em;
-}
-
-.header nav a:hover {
-  text-decoration: underline;
-}
-
-.cart-link {
-  font-weight: bold;
-}
-
-.login-link {
-  font-weight: bold;
-  background-color: #007bff;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-.login-link:hover {
-  background-color: #0056b3;
-}
-
-/* Nuevo estilo para el enlace del nombre de usuario */
-.user-name-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.user-name {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* Estilos para el botón de logout */
-.logout-button {
-  background-color: #ff4d4d;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.logout-button:hover {
-  background-color: #e60000;
+  color: #ffffff;
+  font-weight: 500;
 }
