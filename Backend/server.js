@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./db"); // Conexión a la base de datos (opcional para el endpoint de prueba)
 const opinionsRoutes = require("./routes/opinions");
+const productsRoutes = require("./routes/products"); // Router para productos
+
 
 const app = express();
 const port = 3001; // Puedes cambiar el puerto si lo deseas
@@ -27,6 +29,8 @@ app.get("/api/test", async (req, res) => {
 
 // Montar el router de opiniones en el endpoint /api/opinions
 app.use("/api/opinions", opinionsRoutes);
+app.use("/api/products", productsRoutes); // Endpoint para productos
+
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

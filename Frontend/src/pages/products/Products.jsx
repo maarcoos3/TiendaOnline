@@ -1,19 +1,22 @@
- 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Products.css";
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Ejemplo de datos de productos (simulados)
-  const products = [
-    { id: 1, name: "Camiseta Clásica", description: "Camiseta oficial de Adidas con diseño clásico.", price: "$50" },
-    { id: 2, name: "Camiseta Modern", description: "Diseño moderno para un look actual.", price: "$60" },
-    { id: 3, name: "Camiseta Performance", description: "Optimizada para rendimiento en el campo.", price: "$70" },
-  ];
+  // Recupera los productos al cargar el componente
+  useEffect(() => {
+    fetch("http://localhost:3001/api/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((error) =>
+        console.error("Error al obtener productos:", error)
+      );
+  }, []);
 
-  // Filtrar productos por nombre según el término de búsqueda
-  const filteredProducts = products.filter(product =>
+  // Filtrar productos según el término de búsqueda
+  const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -24,7 +27,7 @@ const Products = () => {
   return (
     <main className="products">
       <section className="search-section">
-        <input 
+        <input
           type="text"
           placeholder="Buscar camisetas..."
           className="search-bar"
@@ -33,14 +36,21 @@ const Products = () => {
         />
       </section>
       <section className="product-list">
-        <h2>Nuestros Productos</h2>
+        <h2>Nuestras Camisetas</h2>
         <div className="products-container">
-          {filteredProducts.length ? (
-            filteredProducts.map(product => (
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
               <div key={product.id} className="product-card">
+                {product.image && (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-image"
+                  />
+                )}
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
-                <p className="price">{product.price}</p>
+                <p className="price">${product.price}</p>
               </div>
             ))
           ) : (
