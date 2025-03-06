@@ -1,0 +1,89 @@
+ 
+/* Contact.css */
+
+.contact {
+    width: 100%;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    text-align: center;
+  }
+  
+  /* Card con información de la tienda */
+  .store-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .store-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+  }
+  
+  .store-card p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  /* Sección del mapa */
+  .map {
+    margin-bottom: 20px;
+  }
+  
+  .map h3 {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+  }
+  
+  /* Formulario de contacto */
+  .contact-form-section {
+    margin-top: 20px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 0.95em;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  /* Responsividad */
+  @media screen and (max-width: 480px) {
+    .contact-form {
+      width: 90%;
+    }
+  }
+  
