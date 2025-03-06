@@ -1,3 +1,9 @@
+.container {
+  max-width: 1200px; /* Ajusta este valor al ancho deseado */
+  margin: 0 auto;    /* Centra el contenedor en la página */
+  padding: 0 20px;   /* Espacio interno opcional para evitar que el contenido toque el borde */
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

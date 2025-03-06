@@ -1,10 +1,26 @@
- 
 .footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
+  background-color: #000000; /* color de fondo */
+  color: #fff;           /* color del texto */
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: #fff;
+  margin: 0 5px;
+}
