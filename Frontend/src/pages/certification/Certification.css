@@ -1,0 +1,128 @@
+/* Certification.css */
+
+.certification {
+  width: 100%;
+  padding: 15px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+/* Sección Hero */
+.cert-hero {
+  position: relative;
+  background-image: url('https://source.unsplash.com/1600x900/?certification');
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.cert-hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.cert-hero-overlay h2 {
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+.cert-hero-overlay p {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Sección Certificaciones */
+.cert-details {
+  margin-bottom: 15px;
+}
+
+.cert-details h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cert-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  width: 280px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cert-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.cert-card h4 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.cert-card p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Sección Información Adicional */
+.cert-additional {
+  margin-top: 15px;
+}
+
+.cert-additional h3 {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+}
+
+.cert-additional p {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Responsividad */
+@media screen and (max-width: 480px) {
+  .certifications-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cert-card {
+    width: 90%;
+  }
+  
+  .cert-hero {
+    height: 30vh;
+  }
+  
+  .cert-hero-overlay h2 {
+    font-size: 1.8em;
+  }
+  
+  .cert-hero-overlay p {
+    font-size: 0.9em;
+  }
+}

@@ -1,125 +1,121 @@
- 
-/* src/pages/home/Home.css */
-
-/* Contenedor general */
 .home {
-    width: 100%;
-    padding: 20px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    background-color: #fafafa;
-  }
-  
-  /* Sección Hero */
+  width: 100%;
+  padding: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.hero {
+  position: relative;
+  background-image: url('https://source.unsplash.com/1600x900/?adidas,football');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 1.2em;
+}
+
+.store-info {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.store-info h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.store-info p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Se aplican estilos a .card y se eliminan estilos de enlaces */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex: 1;
+  max-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none; /* Eliminar subrayado en links */
+  color: inherit; /* Heredar color del contenedor */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #000;
+}
+
+.card p {
+  font-size: 0.95em;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
   .hero {
-    position: relative;
-    background-image: url('https://source.unsplash.com/1600x900/?adidas,football');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .hero-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    color: #fff;
+    height: 40vh;
   }
   
   .hero-overlay h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2em;
   }
   
   .hero-overlay p {
-    font-size: 1.2em;
-  }
-  
-  /* Sección de información de la tienda */
-  .store-info {
-    margin-top: 40px;
-    text-align: center;
+    font-size: 1em;
   }
   
   .store-info h3 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.5em;
   }
   
   .store-info p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
+    font-size: 1em;
   }
-  
-  /* Cards informativas */
+}
+
+@media screen and (max-width: 480px) {
   .info-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
   
   .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    flex: 1;
-    max-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    margin: 10px 0;
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  }
-  
-  .card h4 {
-    margin-bottom: 10px;
-    font-size: 1.3em;
-    color: #000;
-  }
-  
-  .card p {
-    font-size: 0.95em;
-  }
-  
-  /* Media Queries para Responsividad */
-  @media screen and (max-width: 768px) {
-    .hero {
-      height: 40vh;
-    }
-    
-    .hero-overlay h2 {
-      font-size: 2em;
-    }
-    
-    .hero-overlay p {
-      font-size: 1em;
-    }
-    
-    .store-info h3 {
-      font-size: 1.5em;
-    }
-    
-    .store-info p {
-      font-size: 1em;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .info-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .card {
-      max-width: 100%;
-      margin: 10px 0;
-    }
-  }
-  
+}
