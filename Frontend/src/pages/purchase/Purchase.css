@@ -1,0 +1,97 @@
+/* src/pages/purchase/Purchase.css */
+
+.purchase {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  .purchase h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Resumen del pedido */
+  .order-summary {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  
+  .order-summary ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-summary li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .order-summary .total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: right;
+  }
+  
+  /* Información de envío y formulario */
+  .shipping-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .shipping-info h3 {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .shipping-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  .shipping-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .shipping-form button {
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shipping-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsividad */
+  @media screen and (max-width: 768px) {
+    .purchase {
+      padding: 15px;
+    }
+  }
+  

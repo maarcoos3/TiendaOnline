@@ -1,22 +1,19 @@
 // back/server.js
 const express = require("express");
 const cors = require("cors");
-const db = require("./db"); // Conexión a la base de datos (opcional para el endpoint de prueba)
+const db = require("./db");
 const opinionsRoutes = require("./routes/opinions");
-const productsRoutes = require("./routes/products"); // Router para productos
-
+const productsRoutes = require("./routes/products");
+const authRoutes = require("./routes/auth"); // Importa el router de autenticación
 
 const app = express();
-const port = 3001; // Puedes cambiar el puerto si lo deseas
+const port = 3001;
 
-// Middleware para parsear JSON y datos URL-encoded
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Habilitar CORS para permitir solicitudes desde el frontend
 app.use(cors());
 
-// Endpoint de prueba para verificar la conexión a la base de datos
+// Endpoint de prueba (opcional)
 app.get("/api/test", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT 1 + 1 AS result");
@@ -27,10 +24,10 @@ app.get("/api/test", async (req, res) => {
   }
 });
 
-// Montar el router de opiniones en el endpoint /api/opinions
+// Montar las rutas
 app.use("/api/opinions", opinionsRoutes);
-app.use("/api/products", productsRoutes); // Endpoint para productos
-
+app.use("/api/products", productsRoutes);
+app.use("/api/auth", authRoutes); // Monta la ruta de autenticación
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
