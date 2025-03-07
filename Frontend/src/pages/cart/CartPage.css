@@ -1,4 +1,3 @@
-/* CartPage.css */
 
 .cart-page {
   max-width: 960px;
@@ -60,7 +59,6 @@
   background-color: #444;
 }
 
-/* Estilo específico para el botón Pagar */
 .pay-button {
   background-color: #007bff;
 }

@@ -24,11 +24,10 @@ const Purchase = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí enviarías la orden y la información de envío al backend.
+    // envia la orden y la información de envío al backend.
     alert("Compra confirmada. Gracias por tu compra.");
-    clearCart(); // Vacía el carrito tras confirmar la compra.
-    // Redirigir o limpiar el formulario, según convenga.
-  };
+    clearCart();
+    };
 
   return (
     <main className="purchase">

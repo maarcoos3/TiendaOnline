@@ -8,18 +8,15 @@ const CartPage = () => {
   const navigate = useNavigate();
   const totalPrice = cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  // Función para verificar si el usuario está autenticado.
-  // Este ejemplo utiliza localStorage, pero en una aplicación real podrías utilizar Context o un estado global.
+  // verificar si está autenticado.
   const isAuthenticated = () => {
     return localStorage.getItem("user") !== null;
   };
 
   const handlePay = () => {
     if (!isAuthenticated()) {
-      // Redirige a la página de login/registro
       navigate("/login");
     } else {
-      // Redirige a la página de compra (puedes llamarla "/compra" o "/checkout")
       navigate("/compra");
     }
   };

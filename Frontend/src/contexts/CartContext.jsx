@@ -1,4 +1,3 @@
-// src/contexts/CartContext.jsx
 import React, { createContext, useReducer, useContext } from 'react';
 
 const CartContext = createContext();
@@ -10,7 +9,7 @@ const initialState = {
 function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD_ITEM': {
-      // Si el producto ya existe, incrementa la cantidad; si no, lo añade.
+      
       const existingIndex = state.items.findIndex(item => item.id === action.payload.id);
       if (existingIndex !== -1) {
         const updatedItems = [...state.items];

@@ -7,7 +7,6 @@ const Profile = () => {
   const { user, logout, updateUser } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
 
-  // Inicializamos el formulario con los datos actuales, dejando la contraseña vacía
   const [formData, setFormData] = useState({
     name: user ? user.name : "",
     username: user ? user.username : "",
@@ -15,14 +14,13 @@ const Profile = () => {
     password: "",
   });
 
-  // Si no hay usuario autenticado, redirige a login
+  // redirige a login
   if (!user) {
     return <Navigate to="/login" />;
   }
 
   const handleEditClick = () => {
     setIsEditing(true);
-    // Pre-cargar datos actuales y dejar el campo de contraseña vacío para que el usuario pueda cambiarla
     setFormData({
       name: user.name,
       username: user.username,
@@ -39,7 +37,6 @@ const Profile = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      // Envía los datos actualizados al backend
       const response = await fetch("http://localhost:3001/api/auth/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -48,13 +45,13 @@ const Profile = () => {
           name: formData.name,
           username: formData.username,
           email: formData.email,
-          password: formData.password, // Si está vacío, el backend no actualizará la contraseña
+          password: formData.password, 
         }),
       });
       const result = await response.json();
       if (response.ok) {
         alert(result.message);
-        // Actualiza el usuario en el contexto
+        // Actualiza el usuario
         updateUser(result.user);
         setIsEditing(false);
       } else {

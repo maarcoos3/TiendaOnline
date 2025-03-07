@@ -1,31 +1,27 @@
-/* Estilos generales de la página principal */
 .home {
   display: flex;
   flex-direction: column;
-  max-width: 1800px;   /* Controla el ancho máximo para centrar contenido */
-  margin: 0 auto;      /* Centra el contenido horizontalmente */
-  padding: 20px 20px;  /* Espacio interior moderado */
+  max-width: 1800px;   
+  margin: 0 auto;      
+  padding: 20px 20px;  
 }
 
-/* Sección Hero */
 .hero {
   position: relative;
   background: url("/images/fondo.jpg") no-repeat center/cover; 
-  /* Sustituye la URL por la imagen que desees */
-  min-height: 300px;   /* Altura mínima para que luzca como banner */
+  min-height: 300px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Espacio moderado con la siguiente sección */
+  margin-bottom: 20px; 
 }
 
-/* Superposición oscura para el texto en Hero */
 .hero-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px 40px;
   color: #fff;
   text-align: center;
-  border-radius: 5px;   /* Suaviza bordes */
+  border-radius: 5px;   
 }
 
 .hero-overlay h2 {
@@ -37,10 +33,9 @@
   font-size: 1rem;
 }
 
-/* Sección Información de la tienda */
 .store-info {
   text-align: center;
-  margin-bottom: 20px; /* Espacio reducido para una apariencia más compacta */
+  margin-bottom: 20px;
 }
 
 .store-info h3 {
@@ -51,14 +46,13 @@
 .store-info p {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 20px; /* Separación de la sección de tarjetas */
+  margin-bottom: 20px; 
 }
 
-/* Tarjetas de información */
 .info-cards {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Espacio horizontal entre tarjetas */
+  gap: 10px; 
 }
 
 .card {
@@ -83,7 +77,6 @@
   color: #555;
 }
 
-/* Efecto hover en tarjetas */
 .card:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

@@ -4,7 +4,7 @@ import "./Certification.css";
 const Certification = () => {
   return (
     <main className="certification">
-      {/* Sección Hero */}
+
       <section className="cert-hero">
         <div className="cert-hero-overlay">
           <h2>Nuestras Certificaciones</h2>
@@ -14,7 +14,6 @@ const Certification = () => {
         </div>
       </section>
 
-      {/* Sección Detalles de certificaciones */}
       <section className="cert-details">
         <h3>Certificaciones Destacadas</h3>
         <div className="certifications-list">
@@ -36,7 +35,6 @@ const Certification = () => {
         </div>
       </section>
 
-      {/* Sección Información adicional */}
       <section className="cert-additional">
         <h3>Más Información</h3>
         <p>

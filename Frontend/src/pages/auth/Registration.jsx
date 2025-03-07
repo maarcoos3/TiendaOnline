@@ -27,7 +27,6 @@ const Registration = () => {
       const result = await response.json();
       if (response.ok) {
         alert(result.message);
-        // Redirige a la página de login tras un registro exitoso
         navigate("/login");
       } else {
         alert(result.error);

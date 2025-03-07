@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Importamos Link
+import { Link } from "react-router-dom"; 
 import "./Products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Recupera los productos al cargar el componente
   useEffect(() => {
     fetch("http://localhost:3001/api/products")
       .then((res) => res.json())
@@ -16,7 +15,7 @@ const Products = () => {
       );
   }, []);
 
-  // Filtrar productos según el término de búsqueda
+  // Filtrar 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );

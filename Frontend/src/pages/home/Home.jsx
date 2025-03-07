@@ -5,7 +5,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <main className="home">
-      {/* Sección Hero */}
+
       <section className="hero">
         <div className="hero-overlay">
           <h2>Bienvenido a Adidas Store</h2>
@@ -13,7 +13,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sección Información de la tienda */}
       <section className="store-info">
         <h3>Nuestra tienda</h3>
         <p>Ofrecemos productos oficiales y de alta calidad.</p>
