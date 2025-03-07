@@ -1,9 +1,8 @@
-// back/routes/products.js
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
 
-// Endpoint para obtener todos los productos
+// obtener productos
 router.get("/", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM products");

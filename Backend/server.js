@@ -4,7 +4,7 @@ const cors = require("cors");
 const db = require("./db");
 const opinionsRoutes = require("./routes/opinions");
 const productsRoutes = require("./routes/products");
-const authRoutes = require("./routes/auth"); // Importa el router de autenticación
+const authRoutes = require("./routes/auth"); 
 
 const app = express();
 const port = 3001;
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// Endpoint de prueba (opcional)
+// Endpoint de prueba
 app.get("/api/test", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT 1 + 1 AS result");
@@ -27,7 +27,7 @@ app.get("/api/test", async (req, res) => {
 // Montar las rutas
 app.use("/api/opinions", opinionsRoutes);
 app.use("/api/products", productsRoutes);
-app.use("/api/auth", authRoutes); // Monta la ruta de autenticación
+app.use("/api/auth", authRoutes); 
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

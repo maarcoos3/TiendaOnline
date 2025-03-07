@@ -1,10 +1,9 @@
-// back/routes/auth.js
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
 const bcrypt = require("bcryptjs");
 
-// Endpoint para registrar un nuevo usuario
+// nuevo usuario
 router.post("/register", async (req, res) => {
   const { name, username, email, password } = req.body;
   if (!name || !username || !email || !password) {
@@ -33,7 +32,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Endpoint para iniciar sesión
+// iniciar sesión
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -49,7 +48,7 @@ router.post("/login", async (req, res) => {
     if (!passwordMatch) {
       return res.status(400).json({ error: "Credenciales inválidas" });
     }
-    // Extraer y retornar los datos necesarios (evitando enviar la contraseña)
+    
     const { id, name, username, email: userEmail } = user;
     res.json({
       message: "Inicio de sesión exitoso",
@@ -62,7 +61,7 @@ router.post("/login", async (req, res) => {
 });
 
 
-// En back/routes/auth.js
+
 router.put("/update", async (req, res) => {
   const { id, name, username, email, password } = req.body;
   if (!id || !name || !username || !email) {
@@ -70,18 +69,18 @@ router.put("/update", async (req, res) => {
   }
   try {
     let sql, params;
-    // Si el usuario ha ingresado una nueva contraseña, la hasheamos
+    // hashear nueva contraseña si se proporciona
     if (password && password.trim() !== "") {
       const hashedPassword = await bcrypt.hash(password, 10);
       sql = "UPDATE users SET name = ?, username = ?, email = ?, password = ? WHERE id = ?";
       params = [name, username, email, hashedPassword, id];
     } else {
-      // No se actualiza la contraseña
+      
       sql = "UPDATE users SET name = ?, username = ?, email = ? WHERE id = ?";
       params = [name, username, email, id];
     }
     await db.query(sql, params);
-    // Recuperamos los nuevos datos del usuario
+    
     const [rows] = await db.query("SELECT id, name, username, email FROM users WHERE id = ?", [id]);
     if (rows.length === 0) {
       return res.status(404).json({ error: "Usuario no encontrado" });
